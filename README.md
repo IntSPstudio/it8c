@@ -1,4 +1,4 @@
-# IT8c
+# IT8c Library
 Custom made python library for my codes to work better
 
 Latest version: 0.0.1.20161026
