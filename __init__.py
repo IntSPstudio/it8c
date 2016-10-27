@@ -2,7 +2,7 @@
 # Made by IntSPstudio
 # Main package for all of IT8c libraries
 # Thank you for using this library!
-# Version: 0.0.1.20161026
+# Version: 0.0.1.20161027
 # ID: 980001001
 #|==============================================================|#
 
