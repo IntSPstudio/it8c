@@ -8,6 +8,8 @@
 
 #CSV PLUGIN
 from it8c import csv
+#ENCRYPTION
+from it8c import encryption
 
 #CSV READ FILE
 def csvReadFile(filename):
@@ -21,3 +23,7 @@ def csvArraySize(filearray):
 #CSV SIMPLE ARRAY PRINT
 def csvSimplePrint(filearray):
 	return csv.printContentArraySimple(filearray)
+	
+#SHA1 ENCRYPTION UTF8
+def sha1(filestring):
+	return encryption.sha1Encryption(filestring)
