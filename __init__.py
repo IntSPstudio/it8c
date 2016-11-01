@@ -2,7 +2,7 @@
 # Made by IntSPstudio
 # Main package for all of IT8c libraries
 # Thank you for using this library!
-# Version: 0.0.1.20161027
+# Version: 0.0.1.20161102
 # ID: 980001001
 #|==============================================================|#
 
@@ -22,8 +22,10 @@ def csvArraySize(filearray):
 	return csv.getArrayHeightWidth(filearray)
 #CSV SIMPLE ARRAY PRINT
 def csvSimplePrint(filearray):
-	return csv.printContentArraySimple(filearray)
-	
+	return csv.printContentArraySimple(filearray," ")
+#CSV COMPCUS ARRAY PRINT
+def csvCompcusPrint(filearray,filecompcus):
+	return csv.printContentArraySimple(filearray,filecompcus)
 #SHA1 ENCRYPTION UTF8
 def sha1(filestring):
 	return encryption.sha1Encryption(filestring)
