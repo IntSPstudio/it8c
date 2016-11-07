@@ -39,7 +39,7 @@ if __name__ == "__main__":
 			#TC
 			mainInput =input(dcnyStLineEI)
 			mainPage =0
-		#
+		#ABOUT
 		elif mainPage == uiusBckAbout:
 			#TA
 			os.system("cls")

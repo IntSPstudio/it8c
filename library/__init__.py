@@ -2,22 +2,25 @@
 # Made by IntSPstudio
 # Main package for all of IT8c libraries
 # Thank you for using this library!
-# Version: 0.0.2.20161103
+# Version: 0.0.3.20161107
 # ID: 980001001
 #|==============================================================|#
-
-#HAI
+#HELP AND INFORMATION
 from it8c import help
 #VISUAL
 from it8c import visual
-#CSV PLUGIN
+#FILE HANDLING
+from it8c import file
+#DATA HANDLING
+from it8c import data
+#CSV
 from it8c import csv
 #ENCRYPTION
 from it8c import encryption
-
+#|COM|==========================================================|#
 #HAI VERSION
 def version():
-	return "0.0.2.20161103"
+	return "0.0.3.20161107"
 #HAI FEATURES
 def haiFeatures():
 	return help.features()
@@ -27,6 +30,27 @@ def vslTerminalDunno(stpoint):
 #VISUAL TERMINAL BACKGROUND LINE
 def vslTerminalLine(width,mark):
 	return visual.comTerminalBackgroundLine(width,mark)
+#|FILE|=========================================================|#
+#READ TEXT FILE
+def fileReadText(filename):
+	return file.mainReadTextFile(filename)
+#PRINT TEXT FILE
+def filePrintText(filename):
+	return file.mainPrintTextFile(filename)
+#|DATA|=========================================================|#
+#CREATE LIST (1D ARRAY)
+def dataCreateList(filearraysize,filecontent):
+	return data.create1Darray(filearraysize,filecontent)
+#PRINT LIST
+def dataPrintList(filearray,fileseparator):
+	return data.print1DarrayContent(filearray,fileseparator)
+#CREATE ARRAY (2D ARRAY)
+def dataCreateArray(filearrayheight,filearraywidth,filearraycontent):
+	return data.create2Darray(filearrayheight,filearraywidth,filearraycontent)
+#PRINT ARRAY (2D ARRAY)
+def dataPrintArray(filearray,fileseparator):
+	return data.print2DarrayContent(filearray,fileseparator)
+#|CSV|==========================================================|#
 #CSV READ FILE
 def csvReadFile(filename):
 	return csv.makeContentArray(filename)
@@ -38,10 +62,8 @@ def csvArraySize(filearray):
 	return csv.getArrayHeightWidth(filearray)
 #CSV SIMPLE ARRAY PRINT
 def csvSimplePrint(filearray):
-	return csv.printContentArraySimple(filearray," ")
-#CSV COMPCUS ARRAY PRINT
-def csvCompcusPrint(filearray,filecompcus):
-	return csv.printContentArraySimple(filearray,filecompcus)
+	return csv.printContentArraySimple(filearray)
+#|ENCRYPTION|===================================================|#
 #SHA1 ENCRYPTION UTF8
 def sha1(filestring):
 	return encryption.sha1Encryption(filestring)

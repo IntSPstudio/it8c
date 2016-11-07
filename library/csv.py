@@ -89,12 +89,12 @@ def makeContentArray(contentFileName):
 				arrayContent[arrayYP][arrayXP] = wcl
 	return arrayContent
 #PRINT ARRAY
-def printContentArraySimple(array,sepH):
+def printContentArraySimple(array):
 	arrayMaxWidth =0
 	arrayHeight = len(array)
 	arrayPrintMap =""
 	arraySeparatorV ="\n"
-	arraySeparatorH = sepH
+	arraySeparatorH = " "
 	for yp in range(0, arrayHeight):
 		arrayWidth = len(array[yp])
 		for xp in range(0, arrayWidth):
