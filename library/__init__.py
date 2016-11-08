@@ -20,7 +20,7 @@ from it8c import encryption
 #|COM|==========================================================|#
 #HAI VERSION
 def version():
-	return "0.0.3.20161107"
+	return "0.0.4.20161108"
 #HAI FEATURES
 def haiFeatures():
 	return help.features()
