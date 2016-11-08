@@ -2,7 +2,7 @@
 # Made by IntSPstudio
 # Main package for all of IT8c libraries
 # Thank you for using this library!
-# Version: 0.0.3.20161107
+# Version: 0.0.4.20161108
 # ID: 980001001
 #|==============================================================|#
 #HELP AND INFORMATION
@@ -38,12 +38,21 @@ def fileReadText(filename):
 def filePrintText(filename):
 	return file.mainPrintTextFile(filename)
 #|DATA|=========================================================|#
+#CHECK IF IT IS NUMBER
+def checkIfItIsNumber(input):
+	return data.checkIfItIsNumber(input)
 #CREATE LIST (1D ARRAY)
 def dataCreateList(filearraysize,filecontent):
 	return data.create1Darray(filearraysize,filecontent)
-#PRINT LIST
+#PRINT LIST (1D ARRAY)
 def dataPrintList(filearray,fileseparator):
 	return data.print1DarrayContent(filearray,fileseparator)
+#CALCULATE AVARAGE VALUE LIST (1D ARRAY)
+def dataCalcAvgList(filearray):
+	return data.calcAvg1DarrayContent(filearray)
+#CALCULATE SUM VALUE LIST (1D ARRAY)
+def dataCalcSumList(filearray):
+	return data.calcSum1DarrayContent(filearray)
 #CREATE ARRAY (2D ARRAY)
 def dataCreateArray(filearrayheight,filearraywidth,filearraycontent):
 	return data.create2Darray(filearrayheight,filearraywidth,filearraycontent)

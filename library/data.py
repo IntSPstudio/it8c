@@ -18,6 +18,28 @@ def print1DarrayContent(array,separator):
 		else:
 			arrayOutput = point
 	return arrayOutput
+#CALCULATE AVARAGE VALUE 1D ARRAY
+def calcAvg1DarrayContent(array):
+	arrayWidth = len(array)
+	arrayOutput =0
+	arrayCounter =0
+	for i in range(0, arrayWidth):
+		point = array[i]
+		check = checkIfItIsNumber(point)
+		if check == 1:
+			arrayCounter = arrayCounter +1
+			arrayOutput = arrayOutput + int(point)
+	return arrayOutput / arrayCounter
+#CALCULATE SUM VALUE 1D ARRAY
+def calcSum1DarrayContent(array):
+	arrayWidth = len(array)
+	arrayOutput =0
+	for i in range(0, arrayWidth):
+		point = array[i]
+		check = checkIfItIsNumber(point)
+		if check == 1:
+			arrayOutput = arrayOutput + int(point)
+	return arrayOutput
 #MAKE 2D ARRAY
 def create2Darray(arrayHeight,arrayWidth,arrayContent):
 	return [[arrayContent for xp in range(arrayWidth)] for yp in range(arrayHeight)]
@@ -38,3 +60,10 @@ def print2DarrayContent(array,separator):
 		if yp < arrayHeight -1:
 			arrayPrintMap = arrayPrintMap + arraySeparatorV
 	return arrayPrintMap
+#CHECK IF IT IS NUMBER
+def checkIfItIsNumber(input):
+    try: 
+        int(input)
+        return 1
+    except ValueError:
+        return 0
