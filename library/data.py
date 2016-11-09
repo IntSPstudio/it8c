@@ -29,7 +29,10 @@ def calcAvg1DarrayContent(array):
 		if check == 1:
 			arrayCounter = arrayCounter +1
 			arrayOutput = arrayOutput + int(point)
-	return arrayOutput / arrayCounter
+	if arrayCounter > 0:
+		return arrayOutput / arrayCounter
+	else:
+		return 0
 #CALCULATE SUM VALUE 1D ARRAY
 def calcSum1DarrayContent(array):
 	arrayWidth = len(array)
