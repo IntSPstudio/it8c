@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 #|==============================================================|#
 # Made by IntSPstudio
 # Useful scripts to IT8c library
@@ -10,6 +11,10 @@
 #IMPORT 
 import it8c
 import os
+#OPERATING SYSTEM SETTINGS
+# 1 = WINDOWS
+# 2 = LINUX
+uiusOS =1
 #BACKGROUND
 bgdLine =  it8c.vslTerminalLine(0,"")
 #DICTIONARY
@@ -25,13 +30,17 @@ continuity =1
 uiusBckFeatures ="1"
 uiusBckAbout ="2"
 exitPage ="3"
+if uiusOS == 1:
+	mainClearCommand ="cls"
+elif uiusOS == 2:
+	mainClearCommand ="clear"
 #MAIN LOOP
 if __name__ == "__main__":
 	while continuity == 1:
 		#FEATURES
 		if mainPage == uiusBckFeatures:
 			#TA
-			os.system("cls")
+			os.system(mainClearCommand)
 			#TB
 			print(bgdLine)
 			print(dcnyStLineAB, mainTitle, "Features")
@@ -42,7 +51,7 @@ if __name__ == "__main__":
 		#ABOUT
 		elif mainPage == uiusBckAbout:
 			#TA
-			os.system("cls")
+			os.system(mainClearCommand)
 			#TB
 			print(bgdLine)
 			print(dcnyStLineAB, mainTitle, "About")
@@ -56,7 +65,7 @@ if __name__ == "__main__":
 		#MENU
 		else:
 			#TA
-			os.system("cls")
+			os.system(mainClearCommand)
 			#TB
 			print(bgdLine)
 			print(dcnyStLineAB, mainTitle)
