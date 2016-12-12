@@ -6,6 +6,7 @@
 
 #SETTINGS
 fileSeparator =";"
+fileStringSep ='"'
 #READ FILE
 def readFile(name):
 	file = name
@@ -14,18 +15,22 @@ def readFile(name):
 	file.close()
 	return fileContent
 #WRITE FILE
-def writeFile(array, ifilename):
+def writeFile(array, ifilename, separator):
+	#LIMITS
+	if separator == "":
+		separator = fileSeparator
 	arrayMaxWidth =0
 	arrayHeight = len(array)
 	arrayLine =""
 	fileName = ifilename
+	#CONTENT
 	f = open(fileName,"w")
 	for yp in range(0, arrayHeight):
 		arrayWidth = len(array[yp])
 		for xp in range(0, arrayWidth):
 			point = str(array[yp][xp])
 			if arrayLine !="":
-				arrayLine = arrayLine + fileSeparator + point
+				arrayLine = arrayLine + separator + point
 			else:
 				arrayLine = point
 		if yp < arrayHeight -1:
@@ -34,17 +39,30 @@ def writeFile(array, ifilename):
 		arrayLine =""
 	f.close()
 #ARRAY WIDTH (CSV STYLE)
-def getArrayWidth(array):
+def getArrayWidth(array, contentFileSep):
+	#LIMITS
+	if contentFileSep == "":
+		contentFileSep = fileSeparator
 	arrayMaxWidth =0
 	arrayHeight = len(array)
+	#CONTENT
 	for yp in range(0, arrayHeight):
 		arrayWidth = len(array[yp])
 		pointWidth =0
 		pointCheck =0
+		sepaStrPointCheck =0
 		for xp in range(0, arrayWidth):
 			point = str(array[yp][xp])
-			if point == fileSeparator:
-				pointCheck =0
+			#CONTENT STRING CHECK
+			if point == fileStringSep:
+				if sepaStrPointCheck !=0:
+					sepaStrPointCheck =0
+				else:
+					sepaStrPointCheck =1
+			#MAIN CHECK
+			if point == contentFileSep:
+				if sepaStrPointCheck == 0:
+					pointCheck =0
 			else:
 				if pointCheck == 0:
 					pointWidth +=1
@@ -59,13 +77,15 @@ def getArrayHeightWidth(array):
 	arraySize = str(arrayHeight) +"x"+ str(arrayWidth)
 	return arraySize
 #MAKE ARRAY
-def makeContentArray(contentFileName):
+def makeContentArray(contentFileName, contentFileSep):
 	#CONTENT
 	contentFile = readFile(contentFileName)
 	contentHeight = len(contentFile)
 	#LIMITS
+	if contentFileSep == "":
+		contentFileSep = fileSeparator
 	arrayHeight = len(contentFile)
-	arrayWidth = getArrayWidth(contentFile)
+	arrayWidth = getArrayWidth(contentFile, contentFileSep)
 	#LIST COMPREHENSION
 	arrayContent = [["" for xp in range(arrayWidth)] for yp in range(arrayHeight)]
 	#ADDING CONTENT TO LIST
@@ -75,9 +95,17 @@ def makeContentArray(contentFileName):
 		contentCheck =0
 		wcl =""
 		arrayXP =-1
+		sepaStrPointCheck =0
 		for xp in range(0, contentWidth):
 			point = str(contentFile[yp][xp])
-			if point == fileSeparator:
+			#CONTENT STRING CHECK
+			if point == fileStringSep:
+				if sepaStrPointCheck !=0:
+					sepaStrPointCheck =0
+				else:
+					sepaStrPointCheck =1
+			#MAIN CHECK
+			if point == contentFileSep and sepaStrPointCheck == 0:
 				wcl =""
 				contentCheck =0
 			else:

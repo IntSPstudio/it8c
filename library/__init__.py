@@ -2,7 +2,7 @@
 # Made by IntSPstudio
 # Main package for all of IT8c libraries
 # Thank you for using this library!
-# Version: 0.0.4.20161109
+# Version: 0.0.5.20161213
 # ID: 980001001
 #|==============================================================|#
 #HELP AND INFORMATION
@@ -20,7 +20,7 @@ from it8c import encryption
 #|COM|==========================================================|#
 #HAI VERSION
 def version():
-	return "0.0.4.20161109"
+	return "0.0.5.20161213"
 #HAI FEATURES
 def haiFeatures():
 	return help.features()
@@ -38,6 +38,9 @@ def fileReadText(filename):
 def filePrintText(filename):
 	return file.mainPrintTextFile(filename)
 #|DATA|=========================================================|#
+#LETTERS AND DIGITS
+def lettersdigits(input,alt):
+	return data.lettersdigits(input,alt)
 #CHECK IF IT IS NUMBER
 def checkIfItIsNumber(input):
 	return data.checkIfItIsNumber(input)
@@ -61,11 +64,11 @@ def dataPrintArray(filearray,fileseparator):
 	return data.print2DarrayContent(filearray,fileseparator)
 #|CSV|==========================================================|#
 #CSV READ FILE
-def csvReadFile(filename):
-	return csv.makeContentArray(filename)
+def csvReadFile(filename,fileseparator):
+	return csv.makeContentArray(filename,fileseparator)
 #CSV WRITE FILE
-def csvWriteFile(filearray, filename):
-	csv.writeFile(filearray, filename)
+def csvWriteFile(filearray,filename,fileseparator):
+	csv.writeFile(filearray,filename,fileseparator)
 #CSV ARRAY SIZE
 def csvArraySize(filearray):
 	return csv.getArrayHeightWidth(filearray)

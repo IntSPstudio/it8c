@@ -4,6 +4,18 @@
 # Plugin: Data handling
 #|==============================================================|#
 
+#|COM|==========================================================|#
+#MAKE INPUT TO ONLY LETTRS AND DIGITS
+def lettersdigits(input,alt):
+	return str(alt).join(i for i in input if i.isalnum())
+#CHECK IF IT IS NUMBER
+def checkIfItIsNumber(input):
+    try:
+        int(input)
+        return 1
+    except ValueError:
+        return 0
+#|1D ARRAY|=====================================================|#
 #MAKE 1D ARRAY
 def create1Darray(arraySize,arrayContent):
 	return [arrayContent for xp in range(arraySize)]
@@ -43,6 +55,7 @@ def calcSum1DarrayContent(array):
 		if check == 1:
 			arrayOutput = arrayOutput + int(point)
 	return arrayOutput
+#|2D ARRAY|=====================================================|#
 #MAKE 2D ARRAY
 def create2Darray(arrayHeight,arrayWidth,arrayContent):
 	return [[arrayContent for xp in range(arrayWidth)] for yp in range(arrayHeight)]
@@ -63,10 +76,3 @@ def print2DarrayContent(array,separator):
 		if yp < arrayHeight -1:
 			arrayPrintMap = arrayPrintMap + arraySeparatorV
 	return arrayPrintMap
-#CHECK IF IT IS NUMBER
-def checkIfItIsNumber(input):
-    try: 
-        int(input)
-        return 1
-    except ValueError:
-        return 0
