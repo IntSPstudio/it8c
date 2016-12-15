@@ -5,4 +5,4 @@ Latest version: 0.0.6.20161215
 
 Install: If you don't have "it8c" folder in python lib folder you can download "library" folder and move to python lib folder and change name to "it8c". If you do have "it8c" folder you can download and drag and drop new codes to that folder.
 
-I have only his library on Windows 10 and Linux Mint
+Tested with windows and linux
