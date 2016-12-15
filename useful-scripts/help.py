@@ -3,6 +3,7 @@
 # Made by IntSPstudio
 # Useful scripts to IT8c library
 # Thank you for using this software!
+# Version: 0.0.4.20161215
 # ID: 980001003
 #
 # Twitter: @IntSPstudio
@@ -34,6 +35,8 @@ if uiusOS == 1:
 	mainClearCommand ="cls"
 elif uiusOS == 2:
 	mainClearCommand ="clear"
+else:
+	mainClearCommand =""
 #MAIN LOOP
 if __name__ == "__main__":
 	while continuity == 1:
@@ -55,6 +58,7 @@ if __name__ == "__main__":
 			#TB
 			print(bgdLine)
 			print(dcnyStLineAB, mainTitle, "About")
+			print(it8c.haiAbout())
 			#TC
 			mainInput =input(dcnyStLineEI)
 			mainPage =0
