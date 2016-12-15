@@ -4,6 +4,8 @@
 # Plugin: CSV
 #|==============================================================|#
 
+#IMPORT
+from it8c import data
 #SETTINGS
 fileSeparator =";"
 fileStringSep ='"'
@@ -29,6 +31,11 @@ def writeFile(array, ifilename, separator):
 		arrayWidth = len(array[yp])
 		for xp in range(0, arrayWidth):
 			point = str(array[yp][xp])
+			#CHECK TYPE
+			pointTypeCheck = data.checkIfItIsNumber(point)
+			if pointTypeCheck == 0:
+				point = fileStringSep + point + fileStringSep
+			#ADD
 			if arrayLine !="":
 				arrayLine = arrayLine + separator + point
 			else:
@@ -115,7 +122,21 @@ def makeContentArray(contentFileName, contentFileSep):
 				wcl = wcl + point
 				arrayYP = yp
 				arrayContent[arrayYP][arrayXP] = wcl
-	return arrayContent
+	#CHECK STRING SEPS
+	mathRe1Height = len(arrayContent)
+	mathRe1Width = len(arrayContent[0])
+	mathRe1Content = [["" for xp in range(mathRe1Width)] for yp in range(mathRe1Height)]
+	for ypa in range(0, mathRe1Height):
+		for xpa in range(0, mathRe1Width):
+			pointContent = arrayContent[ypa][xpa]
+			pointWidth = len(pointContent)
+			wcl =""
+			for xpb in range(0, pointWidth):
+				pointCheck = pointContent[xpb]
+				if pointCheck != fileStringSep:
+					wcl = wcl + pointCheck
+			mathRe1Content[ypa][xpa] = wcl
+	return mathRe1Content
 #PRINT ARRAY
 def printContentArraySimple(array):
 	arrayMaxWidth =0

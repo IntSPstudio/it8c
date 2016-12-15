@@ -2,7 +2,7 @@
 # Made by IntSPstudio
 # Main package for all of IT8c libraries
 # Thank you for using this library!
-# Version: 0.0.5.20161213
+# Version: 0.0.6.20161215
 # ID: 980001001
 #|==============================================================|#
 #HELP AND INFORMATION
@@ -20,10 +20,13 @@ from it8c import encryption
 #|COM|==========================================================|#
 #HAI VERSION
 def version():
-	return "0.0.5.20161213"
+	return "0.0.6.20161215"
 #HAI FEATURES
 def haiFeatures():
 	return help.features()
+#HAI ABOUT
+def haiAbout():
+	return help.about()
 #VISUAL TERMINAL WHAT
 def vslTerminalDunno(stpoint):
 	return visual.comTerminalDunno(stpoint)

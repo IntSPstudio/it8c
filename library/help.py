@@ -12,3 +12,10 @@ def features():
 	e =" -Make sha1 text"
 	f =" -Visual settings" 
 	return "\n"+ a +"\n"+ b +"\n" + c +"\n" + d +"\n" + e +"\n" + f +"\n"
+def about():
+	a =" -Made by IntSPstudio"
+	b =" -Thank you for using this library!"
+	c =""
+	d =" -Code: github.com/IntSPstudio/it8c"
+	e =" -Wiki: github.com/IntSPstudio/it8c/wiki"
+	return "\n"+ a +"\n"+ b +"\n" + c +"\n" + d +"\n" + e +"\n"
