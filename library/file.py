@@ -5,16 +5,21 @@
 #|==============================================================|#
 
 #READ TEXT FILE
-def mainReadTextFile(name):
-	file = name
-	file = open(file, "r")
+def mainReadTextFile(fileName):
+	file = open(fileName, "r")
 	fileContent = file.read().splitlines()
 	file.close()
 	return fileContent
+#CHECK FILE
+def mainTextFileExists(fileName):
+	try:
+		with open(fileName) as file:
+			return 1
+	except IOError as e:
+		return 0
 #PRINT TEXT FILE
-def mainPrintTextFile(name):
-	file = name
-	file = open(file, "r")
+def mainPrintTextFile(fileName):
+	file = open(fileName, "r")
 	fileContent = file.read()
 	file.close()
 	return fileContent

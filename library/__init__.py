@@ -2,7 +2,7 @@
 # Made by IntSPstudio
 # Main package for all of IT8c libraries
 # Thank you for using this library!
-# Version: 0.0.6.20161215
+# Version: 0.0.7.20161219
 # ID: 980001001
 #|==============================================================|#
 #HELP AND INFORMATION
@@ -20,7 +20,7 @@ from it8c import encryption
 #|COM|==========================================================|#
 #HAI VERSION
 def version():
-	return "0.0.6.20161215"
+	return "0.0.7.20161219"
 #HAI FEATURES
 def haiFeatures():
 	return help.features()
@@ -37,6 +37,9 @@ def vslTerminalLine(width,mark):
 #READ TEXT FILE
 def fileReadText(filename):
 	return file.mainReadTextFile(filename)
+#FILE EXIST
+def fileTextExists(filename):
+	return file.mainTextFileExists(filename)
 #PRINT TEXT FILE
 def filePrintText(filename):
 	return file.mainPrintTextFile(filename)
