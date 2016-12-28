@@ -2,7 +2,7 @@
 # Made by IntSPstudio
 # Main package for all of IT8c libraries
 # Thank you for using this library!
-# Version: 0.0.7.20161219
+# Version: 0.0.8.20161228
 # ID: 980001001
 #|==============================================================|#
 #HELP AND INFORMATION
@@ -20,7 +20,7 @@ from it8c import encryption
 #|COM|==========================================================|#
 #HAI VERSION
 def version():
-	return "0.0.7.20161219"
+	return "0.0.8.20161228"
 #HAI FEATURES
 def haiFeatures():
 	return help.features()
@@ -62,6 +62,9 @@ def dataCalcAvgList(filearray):
 #CALCULATE SUM VALUE LIST (1D ARRAY)
 def dataCalcSumList(filearray):
 	return data.calcSum1DarrayContent(filearray)
+#CHECK OBJECTS (1D ARRAY (RETURN 2D ARRAY!))
+def dataCheckListObjects(filearray):
+	return data.check1DarrayObjects(filearray)
 #CREATE ARRAY (2D ARRAY)
 def dataCreateArray(filearrayheight,filearraywidth,filearraycontent):
 	return data.create2Darray(filearrayheight,filearraywidth,filearraycontent)

@@ -55,6 +55,27 @@ def calcSum1DarrayContent(array):
 		if check == 1:
 			arrayOutput = arrayOutput + int(point)
 	return arrayOutput
+#CHECK 1D LIST OBJECTS
+def check1DarrayObjects(array):
+	arrayContent = sorted(array)
+	arrayWidth = len(array)
+	pointa =""
+	for i in range(0,2):
+		if i == 1:
+			checkHeight = ypb
+			checkWidth =3
+			checkContent = create2Darray(checkHeight,checkWidth,"")
+		ypb =0
+		for ypa in range(0, arrayWidth):
+			pointb = arrayContent[ypa]
+			if pointb !="":
+				if pointb != pointa:
+					if i == 1:
+						checkContent[ypb][0] = str(ypb +1)
+						checkContent[ypb][2] = pointb
+					ypb +=1
+				pointa = pointb
+	return checkContent
 #|2D ARRAY|=====================================================|#
 #MAKE 2D ARRAY
 def create2Darray(arrayHeight,arrayWidth,arrayContent):
