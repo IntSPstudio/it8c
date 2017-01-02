@@ -1,4 +1,4 @@
-# IT8c Library
+# IT8c Data Handling Library
 I want certain features in python and I could not find similars so I made them. Check out the wiki.
 
 Latest version: 0.0.8.20161228
