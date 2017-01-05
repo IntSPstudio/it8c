@@ -17,7 +17,7 @@ def readFile(name):
 	file.close()
 	return fileContent
 #WRITE FILE
-def writeFile(array, ifilename, separator):
+def writeFile(array, ifilename, separator, strsep):
 	#LIMITS
 	if separator == "":
 		separator = fileSeparator
@@ -34,7 +34,10 @@ def writeFile(array, ifilename, separator):
 			#CHECK TYPE
 			pointTypeCheck = data.checkIfItIsNumber(point)
 			if pointTypeCheck == 0:
-				point = fileStringSep + point + fileStringSep
+				if strsep == 1:
+					point = fileStringSep + point + fileStringSep
+				else:
+					point = point
 			#ADD
 			if arrayLine !="":
 				arrayLine = arrayLine + separator + point

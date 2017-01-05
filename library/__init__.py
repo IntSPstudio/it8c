@@ -2,7 +2,7 @@
 # Made by IntSPstudio
 # Main package for all of IT8c libraries
 # Thank you for using this library!
-# Version: 0.0.8.20161228
+# Version: 0.1.9.20170105
 # ID: 980001001
 #|==============================================================|#
 #HELP AND INFORMATION
@@ -20,7 +20,7 @@ from it8c import encryption
 #|COM|==========================================================|#
 #HAI VERSION
 def version():
-	return "0.0.8.20161228"
+	return "0.1.9.20170105"
 #HAI FEATURES
 def haiFeatures():
 	return help.features()
@@ -43,41 +43,70 @@ def fileTextExists(filename):
 #PRINT TEXT FILE
 def filePrintText(filename):
 	return file.mainPrintTextFile(filename)
-#|DATA|=========================================================|#
+#|DATA COM|=====================================================|#
 #LETTERS AND DIGITS
 def lettersdigits(input,alt):
 	return data.lettersdigits(input,alt)
-#CHECK IF IT IS NUMBER
+#CHECK IF IT IS A NUMBER
 def checkIfItIsNumber(input):
 	return data.checkIfItIsNumber(input)
-#CREATE LIST (1D ARRAY)
+#|DATA 1D|======================================================|#
+#CREATE LIST
 def dataCreateList(filearraysize,filecontent):
 	return data.create1Darray(filearraysize,filecontent)
-#PRINT LIST (1D ARRAY)
+#PRINT LIST
 def dataPrintList(filearray,fileseparator):
 	return data.print1DarrayContent(filearray,fileseparator)
-#CALCULATE AVARAGE VALUE LIST (1D ARRAY)
+#CALCULATE AVARAGE VALUE
 def dataCalcAvgList(filearray):
 	return data.calcAvg1DarrayContent(filearray)
-#CALCULATE SUM VALUE LIST (1D ARRAY)
+#CALCULATE SUM VALUE 
 def dataCalcSumList(filearray):
 	return data.calcSum1DarrayContent(filearray)
-#CHECK OBJECTS (1D ARRAY (RETURN 2D ARRAY!))
+#CHECK MAX VALUE
+def dataCheckMaxValueList(filearray):
+	return data.checkMaxValue1DarrayContent(filearray)
+#CHECK OBJECTS
 def dataCheckListObjects(filearray):
 	return data.check1DarrayObjects(filearray)
-#CREATE ARRAY (2D ARRAY)
-def dataCreateArray(filearrayheight,filearraywidth,filearraycontent):
-	return data.create2Darray(filearrayheight,filearraywidth,filearraycontent)
-#PRINT ARRAY (2D ARRAY)
+#STRING FORMAT
+def dataChangeListInputFormat(filearray,arraymode):
+	return data.change1DarrayInputFormat(filearray,arraymode)
+#|DATA 2D|======================================================|#
+#CREATE ARRAY
+def dataCreateArray(filearrayheight,filearraywidth,filecontent):
+	return data.create2Darray(filearrayheight,filearraywidth,filecontent)
+#PRINT ARRAY
 def dataPrintArray(filearray,fileseparator):
 	return data.print2DarrayContent(filearray,fileseparator)
+#MAKE 2D ARRAY TO 1D ARRAY
+def dataMakeArrayToList(filearray):
+	return data.make2Darray1Darray(filearray)
+#CALCULATE AVARAGE VALUE 
+def dataCalcAvgArray(filearray):
+	return data.calcAvg2DarrayContent(filearray)
+#CALCULATE SUM VALUE 
+def dataCalcSumArray(filearray):
+	return data.calcSum2DarrayContent(filearray)
+#CHECK MAX VALUE
+def dataCheckMaxValueArray(filearray):
+	return data.checkMaxValue2DarrayContent(filearray)
+#CHECK OBJECTS
+def dataCheckArrayObjects(filearray):
+	return data.check2DarrayObjects(filearray)
+#STRING FORMAT
+def dataChangeArrayInputFormat(filearray,arraymode):
+	return data.change2DarrayInputFormat(filearray,arraymode)
+#EXTRACT ARRAY COLUMN
+def dataExtractArrayColumn(filearray,pos):
+	return data.extractArrayColumn(filearray,pos)
 #|CSV|==========================================================|#
 #CSV READ FILE
 def csvReadFile(filename,fileseparator):
 	return csv.makeContentArray(filename,fileseparator)
 #CSV WRITE FILE
-def csvWriteFile(filearray,filename,fileseparator):
-	csv.writeFile(filearray,filename,fileseparator)
+def csvWriteFile(filearray,filename,fileseparator,strseparator):
+	csv.writeFile(filearray,filename,fileseparator,strseparator)
 #CSV ARRAY SIZE
 def csvArraySize(filearray):
 	return csv.getArrayHeightWidth(filearray)
