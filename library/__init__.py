@@ -69,9 +69,9 @@ def dataCheckMaxValueList(filearray):
 #CHECK OBJECTS
 def dataCheckListObjects(filearray):
 	return data.check1DarrayObjects(filearray)
-#STRING FORMAT
-def dataChangeListInputFormat(filearray,arraymode):
-	return data.change1DarrayInputFormat(filearray,arraymode)
+#CONTENT FORMAT
+def dataChangeListContentFormat(filearray,arraymode):
+	return data.change1DarrayContentFormat(filearray,arraymode)
 #|DATA 2D|======================================================|#
 #CREATE ARRAY
 def dataCreateArray(filearrayheight,filearraywidth,filecontent):
@@ -94,9 +94,9 @@ def dataCheckMaxValueArray(filearray):
 #CHECK OBJECTS
 def dataCheckArrayObjects(filearray):
 	return data.check2DarrayObjects(filearray)
-#STRING FORMAT
-def dataChangeArrayInputFormat(filearray,arraymode):
-	return data.change2DarrayInputFormat(filearray,arraymode)
+#CONTENT FORMAT
+def dataChangeArrayContentFormat(filearray,arraymode):
+	return data.change2DarrayContentFormat(filearray,arraymode)
 #EXTRACT ARRAY COLUMN
 def dataExtractArrayColumn(filearray,pos):
 	return data.extractArrayColumn(filearray,pos)

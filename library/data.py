@@ -108,8 +108,8 @@ def check1DarrayObjects(arrayContent):
 					ypb +=1
 				pointa = pointb
 	return checkContent
-#INPUT FORMAT
-def change1DarrayInputFormat(arrayContent,arrayMode):
+#CONTENT FORMAT
+def change1DarrayContentFormat(arrayContent,arrayMode):
 	arrayWidth = len(arrayContent)
 	for yp in range(0, arrayWidth):
 		pointa = str(arrayContent[yp])
@@ -172,9 +172,9 @@ def checkMaxValue2DarrayContent(arrayContent):
 #CHECK 2D ARRAY OBJECTS
 def check2DarrayObjects(arrayContent):
 	return check1DarrayObjects(make2Darray1Darray(arrayContent))
-#INPUT FORMAT
-def change2DarrayInputFormat(array1Content,arrayMode):
-	return make1Darray2Darray(change1DarrayInputFormat(make2Darray1Darray(array1Content),arrayMode),"",len(array1Content[0]))
+#CONTENT FORMAT
+def change2DarrayContentFormat(array1Content,arrayMode):
+	return make1Darray2Darray(change1DarrayContentFormat(make2Darray1Darray(array1Content),arrayMode),"",len(array1Content[0]))
 #EXTRACT ARRAY COLUMN
 def extractArrayColumn(array1Content,pos):
 	array1Height = len(array1Content)
