@@ -2,7 +2,7 @@
 # Made by IntSPstudio
 # Main package for all of IT8c libraries
 # Thank you for using this library!
-# Version: 0.1.9.20170105
+# Version: 0.1.10.20170109
 # ID: 980001001
 #|==============================================================|#
 #HELP AND INFORMATION
@@ -20,7 +20,7 @@ from it8c import encryption
 #|COM|==========================================================|#
 #HAI VERSION
 def version():
-	return "0.1.9.20170105"
+	return "0.1.10.20170109"
 #HAI FEATURES
 def haiFeatures():
 	return help.features()
@@ -77,8 +77,11 @@ def dataChangeListContentFormat(filearray,arraymode):
 def dataCreateArray(filearrayheight,filearraywidth,filecontent):
 	return data.create2Darray(filearrayheight,filearraywidth,filecontent)
 #PRINT ARRAY
-def dataPrintArray(filearray,fileseparator):
-	return data.print2DarrayContent(filearray,fileseparator)
+def dataPrintArray(filearray,contentseparator):
+	return data.print2DarrayContent(filearray,contentseparator)
+#SMART PRINT ARRAY
+def dataSmrPrintArray(filearray,contentseparator,fillcontent,contentmode):
+	return data.sprint2DarrayContent(filearray,contentseparator,fillcontent,contentmode)
 #MAKE 2D ARRAY TO 1D ARRAY
 def dataMakeArrayToList(filearray):
 	return data.make2Darray1Darray(filearray)

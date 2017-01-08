@@ -160,6 +160,39 @@ def print2DarrayContent(arrayContent,separator):
 		if yp < arrayHeight -1:
 			arrayPrintMap = arrayPrintMap + arraySeparatorV
 	return arrayPrintMap
+#SMART PRINT 2D ARRAY
+def sprint2DarrayContent(arrayContent,separator,fill,contentMode):
+	arrayHeight = len(arrayContent)
+	arrayWidth = len(arrayContent[0])
+	arrayPrintMap =""
+	arraySeparatorV ="\n"
+	arrayMaxContentLen =0
+	for i in range(0, 2):
+		for yp in range(0, arrayHeight):
+			for xp in range(0, arrayWidth):
+				pointa = str(arrayContent[yp][xp])
+				pointb =""
+				checka = len(pointa)
+				if i == 0:
+					if checka > arrayMaxContentLen:
+						arrayMaxContentLen = checka +1
+				if i == 1:
+					checkb = arrayMaxContentLen - checka
+					if checkb > 0:
+						for x in range(0, checkb):
+							if contentMode == 1:
+								pointb = pointb + fill
+							else:
+								pointb = pointb + " "
+					pointc = pointa + pointb
+					if xp == 0:
+						arrayPrintMap = arrayPrintMap + pointc
+					else:
+						arrayPrintMap = arrayPrintMap + separator + pointc
+			if i == 1:	
+				if yp < arrayHeight -1:
+					arrayPrintMap = arrayPrintMap + arraySeparatorV
+	return arrayPrintMap
 #CALCULATE AVARAGE VALUE
 def calcAvg2DarrayContent(arrayContent):
 	return calcAvg1DarrayContent(make2Darray1Darray(arrayContent))
