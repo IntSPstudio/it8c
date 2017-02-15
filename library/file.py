@@ -10,6 +10,16 @@ def mainReadTextFile(fileName):
 	fileContent = file.read().splitlines()
 	file.close()
 	return fileContent
+#WRITE LIST TEXT FILE
+def mainWriteListTextFile(arrayContent, fileName):
+	arrayHeight = len(arrayContent)
+	f = open(fileName,"w")
+	for yp in range(0, arrayHeight):
+		arrayLine = arrayContent[yp]
+		if yp < arrayHeight -1:
+			arrayLine = arrayLine +"\n"
+		f.write(arrayLine)
+	f.close()
 #CHECK FILE
 def mainTextFileExists(fileName):
 	try:
