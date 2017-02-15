@@ -3,7 +3,7 @@
 # Made by IntSPstudio
 # Useful scripts to IT8c library
 # Thank you for using this software!
-# Version: 0.0.4.20161215
+# Version: 0.0.5.20170215
 # ID: 980001003
 #
 # Twitter: @IntSPstudio
@@ -18,6 +18,7 @@ import os
 uiusOS =1
 #BACKGROUND
 bgdLine =  it8c.vslTerminalLine(0,"")
+bgdIT8cLogo = it8c.vslTerminalLogo(1)
 #DICTIONARY
 dcnyStLineAA ="]"
 dcnyStLineAB ="==" + dcnyStLineAA
@@ -45,6 +46,7 @@ if __name__ == "__main__":
 			#TA
 			os.system(mainClearCommand)
 			#TB
+			print(bgdIT8cLogo)
 			print(bgdLine)
 			print(dcnyStLineAB, mainTitle, "Features")
 			print(it8c.haiFeatures())
@@ -56,6 +58,7 @@ if __name__ == "__main__":
 			#TA
 			os.system(mainClearCommand)
 			#TB
+			print(bgdIT8cLogo)
 			print(bgdLine)
 			print(dcnyStLineAB, mainTitle, "About")
 			print(it8c.haiAbout())
@@ -66,11 +69,15 @@ if __name__ == "__main__":
 		elif mainPage == exitPage:
 			#TA
 			continuity =0
+			os.system(mainClearCommand)
+			#TB
+			print(bgdIT8cLogo)
 		#MENU
 		else:
 			#TA
 			os.system(mainClearCommand)
 			#TB
+			print(bgdIT8cLogo)
 			print(bgdLine)
 			print(dcnyStLineAB, mainTitle)
 			print(" 1"+ dcnyStLineAA, "Features")
