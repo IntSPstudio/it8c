@@ -209,11 +209,42 @@ def check2DarrayObjects(arrayContent):
 def change2DarrayContentFormat(array1Content,arrayMode):
 	return make1Darray2Darray(change1DarrayContentFormat(make2Darray1Darray(array1Content),arrayMode),"",len(array1Content[0]))
 #EXTRACT ARRAY COLUMN
-def extractArrayColumn(array1Content,pos):
+def extract2DarrayColumn(array1Content,pos):
 	array1Height = len(array1Content)
 	array1Width = len(array1Content[0])
 	array2Content = create1Darray(array1Height,"")
 	if pos < array1Width:
 		for yp in range(0, array1Height):
 			array2Content[yp] = array1Content[yp][pos]
+	return array2Content
+#ADD NEW ROW
+def addRow2Darray(array1Content,array3Content):
+	array1Height = len(array1Content)
+	array1Width = len(array1Content[0])
+	array2Height = array1Height +1
+	array2Width = array1Width
+	array2Content = create2Darray(array2Height,array2Width,"")
+	array3Width = len(array3Content)
+	for yp in range(0,array1Height):
+		for xp in range(0,array1Width):
+			pointa = str(array1Content[yp][xp])
+			array2Content[yp][xp] = pointa
+	yp = array1Height
+	for xp in range(0,array1Width):
+		if xp < array3Width:
+			array2Content[yp][xp] = array3Content[xp]
+	return array2Content
+#FLIP OBJECTS
+def flip2DarrayObjects(array1Content):
+	array1Height = len(array1Content)
+	array1Width = len(array1Content[0])
+	array2Height = array1Height
+	array2Width = array1Width
+	array2Content = create2Darray(array2Height,array2Width,"")
+	ypb = array2Height
+	for ypa in range(0,array1Height):
+		ypb -=1
+		for xp in range(0,array1Width):
+			pointa = str(array1Content[ypa][xp])
+			array2Content[ypb][xp] = pointa
 	return array2Content

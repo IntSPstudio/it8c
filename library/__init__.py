@@ -2,7 +2,7 @@
 # Made by IntSPstudio
 # Main package for all of IT8c libraries
 # Thank you for using this library!
-# Version: 0.1.11.20170215
+# Version: 0.1.12.20170301
 # ID: 980001001
 #|==============================================================|#
 #HELP AND INFORMATION
@@ -20,7 +20,7 @@ from it8c import encryption
 #|COM|==========================================================|#
 #HAI VERSION
 def version():
-	return "0.1.11.20170215"
+	return "0.1.12.20170301"
 #HAI FEATURES
 def haiFeatures():
 	return help.features()
@@ -108,7 +108,13 @@ def dataChangeArrayContentFormat(filearray,arraymode):
 	return data.change2DarrayContentFormat(filearray,arraymode)
 #EXTRACT ARRAY COLUMN
 def dataExtractArrayColumn(filearray,pos):
-	return data.extractArrayColumn(filearray,pos)
+	return data.extract2DarrayColumn(filearray,pos)
+#ADD NEW ROW (ROW = 1D ARRAY)
+def dataAddArrayRow(filearray,addedrow):
+	return data.addRow2Darray(filearray,addedrow)
+#FLIP OBJECTS
+def dataFlipArrayObjects(filearray):
+	return data.flip2DarrayObjects(filearray)
 #|CSV|==========================================================|#
 #CSV READ FILE
 def csvReadFile(filename,fileseparator):
