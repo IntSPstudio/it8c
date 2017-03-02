@@ -88,9 +88,9 @@ def checkMaxValue1DarrayContent(arrayContent):
 				arrayOutput = point
 	return arrayOutput
 #CHECK 1D ARRAY OBJECTS
-def check1DarrayObjects(arrayContent):
-	arrayContent = sorted(arrayContent)
-	arrayWidth = len(arrayContent)
+def check1DarrayObjects(array1Content):
+	array1Content = sorted(array1Content)
+	array1Width = len(array1Content)
 	pointa =""
 	for i in range(0,2):
 		if i == 1:
@@ -98,8 +98,8 @@ def check1DarrayObjects(arrayContent):
 			checkWidth =3
 			checkContent = create2Darray(checkHeight,checkWidth,"")
 		ypb =0
-		for ypa in range(0, arrayWidth):
-			pointb = arrayContent[ypa]
+		for ypa in range(0, array1Width):
+			pointb = str(array1Content[ypa])
 			if pointb !="":
 				if pointb != pointa:
 					if i == 1:
@@ -107,6 +107,14 @@ def check1DarrayObjects(arrayContent):
 						checkContent[ypb][2] = pointb
 					ypb +=1
 				pointa = pointb
+	for ypa in range(0,checkHeight):
+		checka =0
+		pointa = str(checkContent[ypa][2])
+		for ypb in range(0,array1Width):
+			pointb = str(array1Content[ypb])
+			if pointa == pointb:
+				checka +=1
+		checkContent[ypa][1] = str(checka)
 	return checkContent
 #CONTENT FORMAT
 def change1DarrayContentFormat(arrayContent,arrayMode):
@@ -161,38 +169,43 @@ def print2DarrayContent(arrayContent,separator):
 			arrayPrintMap = arrayPrintMap + arraySeparatorV
 	return arrayPrintMap
 #SMART PRINT 2D ARRAY
-def sprint2DarrayContent(arrayContent,separator,fill,contentMode):
-	arrayHeight = len(arrayContent)
-	arrayWidth = len(arrayContent[0])
-	arrayPrintMap =""
-	arraySeparatorV ="\n"
-	arrayMaxContentLen =0
-	for i in range(0, 2):
-		for yp in range(0, arrayHeight):
-			for xp in range(0, arrayWidth):
-				pointa = str(arrayContent[yp][xp])
+def sprint2DarrayContent(array1Content,separator,fill,contentMode):
+	array1Height = len(array1Content)
+	array1Width = len(array1Content[0])
+	arrayRowSpWidth = create1Darray(array1Width,"")
+	array2Height = array1Height
+	array2Width = array1Width
+	array2Content = create2Darray(array2Height,array2Width,"")
+	for xp in range(0,array1Width):
+		contenta = extract2DarrayColumn(array1Content,xp)
+		contentaLength = len(contenta)
+		checka =0
+		for yp in range(0,contentaLength):
+			checkb = len(str(contenta[yp]))
+			if checkb > checka:
+				checka = checkb
+		arrayRowSpWidth[xp] = checka
+	for yp in range(0,array1Height):
+		for xp in range(0,array1Width):
+			pointa = str(array1Content[yp][xp])
+			checka = len(pointa)
+			checkb = arrayRowSpWidth[xp] - checka
+			checkc = checkIfItIsNumber(pointa)
+			if checkb > 0:
 				pointb =""
-				checka = len(pointa)
-				if i == 0:
-					if checka > arrayMaxContentLen:
-						arrayMaxContentLen = checka +1
-				if i == 1:
-					checkb = arrayMaxContentLen - checka
-					if checkb > 0:
-						for x in range(0, checkb):
-							if contentMode == 1:
-								pointb = pointb + fill
-							else:
-								pointb = pointb + " "
-					pointc = pointa + pointb
-					if xp == 0:
-						arrayPrintMap = arrayPrintMap + pointc
+				for x in range(0, checkb):
+					if contentMode == 1:
+						pointb = pointb + fill
 					else:
-						arrayPrintMap = arrayPrintMap + separator + pointc
-			if i == 1:	
-				if yp < arrayHeight -1:
-					arrayPrintMap = arrayPrintMap + arraySeparatorV
-	return arrayPrintMap
+						pointb = pointb + " "
+				if checkc == 0:
+					pointc = pointa + pointb
+				else:
+					pointc = pointb + pointa
+			else:
+				pointc = pointa
+			array2Content[yp][xp] = pointc
+	return print2DarrayContent(array2Content,separator)
 #CALCULATE AVARAGE VALUE
 def calcAvg2DarrayContent(arrayContent):
 	return calcAvg1DarrayContent(make2Darray1Darray(arrayContent))
