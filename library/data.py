@@ -245,7 +245,7 @@ def addRow2Darray(array1Content,array3Content):
 	yp = array1Height
 	for xp in range(0,array1Width):
 		if xp < array3Width:
-			array2Content[yp][xp] = array3Content[xp]
+			array2Content[yp][xp] = str(array3Content[xp])
 	return array2Content
 #FLIP OBJECTS
 def flip2DarrayObjects(array1Content):
