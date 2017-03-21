@@ -2,7 +2,7 @@
 # Made by IntSPstudio
 # Main package for all of IT8c libraries
 # Thank you for using this library!
-# Version: 0.1.14.20170318
+# Version: 0.1.15.20170321
 # ID: 980001001
 #|==============================================================|#
 #HELP AND INFORMATION
@@ -20,7 +20,7 @@ from it8c import encryption
 #|COM|==========================================================|#
 #HAI VERSION
 def version():
-	return "0.1.14.20170318"
+	return "0.1.15.20170321"
 #HAI FEATURES
 def haiFeatures():
 	return help.features()
@@ -129,6 +129,12 @@ def csvArraySize(filearray):
 def csvSimplePrint(filearray):
 	return csv.printContentArraySimple(filearray)
 #|ENCRYPTION|===================================================|#
-#SHA1 ENCRYPTION UTF8
-def sha1(filestring):
-	return encryption.sha1Encryption(filestring)
+#SHA1
+def encryptSha1(filestring):
+	return encryption.eptnSha1(filestring)
+#SHA256
+def encryptSha256(filestring):
+	return encryption.eptnSha256(filestring)
+#MD5
+def encryptMd5(filestring):
+	return encryption.eptnMd5(filestring)
