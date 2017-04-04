@@ -2,7 +2,7 @@
 # Made by IntSPstudio
 # Main package for all of IT8c libraries
 # Thank you for using this library!
-# Version: 0.1.15.20170321
+# Version: 0.1.16.20170404
 # ID: 980001001
 #|==============================================================|#
 #HELP AND INFORMATION
@@ -20,7 +20,7 @@ from it8c import encryption
 #|COM|==========================================================|#
 #HAI VERSION
 def version():
-	return "0.1.15.20170321"
+	return "0.1.16.20170404"
 #HAI FEATURES
 def haiFeatures():
 	return help.features()

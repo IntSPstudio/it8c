@@ -236,16 +236,19 @@ def addRow2Darray(array1Content,array3Content):
 	array1Width = len(array1Content[0])
 	array2Height = array1Height +1
 	array2Width = array1Width
-	array2Content = create2Darray(array2Height,array2Width,"")
 	array3Width = len(array3Content)
+	if array3Width > array2Width:
+		checka = array3Width
+	else:
+		checka = array2Width
+	array2Content = create2Darray(array2Height,checka,"")
 	for yp in range(0,array1Height):
 		for xp in range(0,array1Width):
 			pointa = str(array1Content[yp][xp])
 			array2Content[yp][xp] = pointa
 	yp = array1Height
-	for xp in range(0,array1Width):
-		if xp < array3Width:
-			array2Content[yp][xp] = str(array3Content[xp])
+	for xp in range(0,array3Width):
+		array2Content[yp][xp] = str(array3Content[xp])
 	return array2Content
 #FLIP OBJECTS
 def flip2DarrayObjects(array1Content):
