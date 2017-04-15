@@ -1,8 +1,8 @@
 #|==============================================================|#
 # Made by IntSPstudio
-# Main package for all of IT8c libraries
+# Data handling library
 # Thank you for using this library!
-# Version: 0.1.16.20170404
+# Version: 0.2.17.20170416
 # ID: 980001001
 #|==============================================================|#
 #HELP AND INFORMATION
@@ -13,6 +13,8 @@ from it8c import visual
 from it8c import file
 #DATA HANDLING
 from it8c import data
+#COPA
+from it8c import copa
 #CSV
 from it8c import csv
 #ENCRYPTION
@@ -20,7 +22,7 @@ from it8c import encryption
 #|COM|==========================================================|#
 #HAI VERSION
 def version():
-	return "0.1.16.20170404"
+	return "0.2.17.20170416"
 #HAI FEATURES
 def haiFeatures():
 	return help.features()
@@ -115,6 +117,10 @@ def dataAddArrayRow(filearray,addedrow):
 #FLIP OBJECTS
 def dataFlipArrayObjects(filearray):
 	return data.flip2DarrayObjects(filearray)
+#|COPA|=========================================================|#
+#READ FILE
+def copaRead(filename,fileseparator):
+	return copa.readCopaFile(filename,fileseparator)
 #|CSV|==========================================================|#
 #CSV READ FILE
 def csvReadFile(filename,fileseparator):
