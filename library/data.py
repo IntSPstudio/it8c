@@ -135,6 +135,14 @@ def change1DarrayContentFormat(arrayContent,arrayMode):
 				pointb =0
 		arrayContent[yp] = pointb
 	return arrayContent
+#FLIP OBJECTS
+def flip1DarrayObjects(array1Content):
+	array1Length = len(array1Content)
+	array2Content = create1Darray(array1Length,"")
+	for ypa in range(0,array1Length):
+		ypb = array1Length -ypa -1
+		array2Content[ypa] = array1Content[ypb]
+	return array2Content
 #|2D ARRAY|=====================================================|#
 #MAKE 2D ARRAY
 def create2Darray(arrayHeight,arrayWidth,arrayContent):

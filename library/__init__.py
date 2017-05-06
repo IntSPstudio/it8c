@@ -2,7 +2,7 @@
 # Made by IntSPstudio
 # Data handling library
 # Thank you for using this library!
-# Version: 0.2.17.20170416
+# Version: 0.2.18.20170506
 # ID: 980001001
 #|==============================================================|#
 #HELP AND INFORMATION
@@ -22,7 +22,7 @@ from it8c import encryption
 #|COM|==========================================================|#
 #HAI VERSION
 def version():
-	return "0.2.17.20170416"
+	return "0.2.18.20170506"
 #HAI FEATURES
 def haiFeatures():
 	return help.features()
@@ -80,6 +80,8 @@ def dataCheckListObjects(filearray):
 #CONTENT FORMAT
 def dataChangeListContentFormat(filearray,arraymode):
 	return data.change1DarrayContentFormat(filearray,arraymode)
+def dataFlipListObjects(filearray):
+	return data.flip1DarrayObjects(filearray)
 #|DATA 2D|======================================================|#
 #CREATE ARRAY
 def dataCreateArray(filearrayheight,filearraywidth,filecontent):
