@@ -50,7 +50,7 @@ def fileWriteTextList(filelist,filename):
 	return file.mainWriteListTextFile(filelist,filename)
 #WRITE 1L TEXT FILE
 def fileWrite1LText(fileline,filename):
-	return file.mainWriteListTextFile(fileline,filename)
+	return file.mainWrite1LTextFile(fileline,filename)
 #FILE EXIST
 def fileTextExists(filename):
 	return file.mainTextFileExists(filename)
