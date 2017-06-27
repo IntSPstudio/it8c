@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 #|==============================================================|#
 # Made by IntSPstudio
 # Useful scripts to IT8c library

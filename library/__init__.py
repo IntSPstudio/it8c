@@ -2,7 +2,7 @@
 # Made by IntSPstudio
 # Data handling library
 # Thank you for using this library!
-# Version: 0.2.18.20170506
+# Version: 0.2.19.20172806
 # ID: 980001001
 #|==============================================================|#
 #HELP AND INFORMATION
@@ -22,7 +22,7 @@ from it8c import encryption
 #|COM|==========================================================|#
 #HAI VERSION
 def version():
-	return "0.2.18.20170506"
+	return "0.2.19.20172806"
 #HAI FEATURES
 def haiFeatures():
 	return help.features()
@@ -42,9 +42,15 @@ def vslTerminalLine(width,mark):
 #READ TEXT FILE
 def fileReadText(filename):
 	return file.mainReadTextFile(filename)
+#READ 1L TEXT FILE
+def fileRead1LText(filename):
+	return file.mainRead1LTextFile(filename)
 #WRITE LIST TEXT FILE
 def fileWriteTextList(filelist,filename):
 	return file.mainWriteListTextFile(filelist,filename)
+#WRITE 1L TEXT FILE
+def fileWrite1LText(fileline,filename):
+	return file.mainWriteListTextFile(fileline,filename)
 #FILE EXIST
 def fileTextExists(filename):
 	return file.mainTextFileExists(filename)
