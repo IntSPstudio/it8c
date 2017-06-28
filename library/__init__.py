@@ -2,7 +2,7 @@
 # Made by IntSPstudio
 # Data handling library
 # Thank you for using this library!
-# Version: 0.2.19.20172806
+# Version: 0.2.20.20172806
 # ID: 980001001
 #|==============================================================|#
 #HELP AND INFORMATION
@@ -22,7 +22,7 @@ from it8c import encryption
 #|COM|==========================================================|#
 #HAI VERSION
 def version():
-	return "0.2.19.20172806"
+	return "0.2.20.20172806"
 #HAI FEATURES
 def haiFeatures():
 	return help.features()
@@ -129,6 +129,9 @@ def dataFlipArrayObjects(filearray):
 #READ FILE
 def copaRead(filename,fileseparator):
 	return copa.readCopaFile(filename,fileseparator)
+#WRITE FILE
+def copaWrite(filename,filearray,fileseparator):
+	copa.writeCopaFile(filename,filearray,fileseparator)
 #|CSV|==========================================================|#
 #CSV READ FILE
 def csvReadFile(filename,fileseparator):
