@@ -1,7 +1,7 @@
 #|==============================================================|#
 # Made by IntSPstudio
 # Thank you for using this library!
-# Plugin: Coba
+# Plugin: Copa
 #|==============================================================|#
 
 #IMPORT
@@ -49,3 +49,29 @@ def writeCopaFile(fileName,array1Content,separator):
 				pointc = pointa + separator + pointb
 			array2Content[i] = pointc
 		file.mainWriteListTextFile(array2Content,fileName)
+#MODIFY FILE
+def modCopaFile(fileName,parKey,parValue,copaMode,separator):
+	if separator =="":
+		separator ="="
+	if copaMode == 0:
+		if file.mainTextFileExists(fileName) == 1:
+			pointc = readCopaFile(fileName,separator)
+			pointaLength = len(pointc)
+			success =0
+			for i in range(0,pointaLength):
+				pointd = pointc[i][0]
+				if pointd == parKey:
+					success =1
+					pointc[i][1] = parValue
+			if success == 0:
+				pointd = data.create1Darray(2,"")
+				pointd[0] = parKey
+				pointd[1] = parValue
+				pointe = data.addRow2Darray(pointc,pointd)
+				pointc = pointe
+			writeCopaFile(fileName,pointc,separator)
+		else:
+			pointc = data.create2Darray(1,2,"")
+			pointc[0][0] = parKey
+			pointc[0][1] = parValue
+			writeCopaFile(fileName,pointc,separator)
