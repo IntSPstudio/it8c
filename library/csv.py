@@ -10,17 +10,16 @@ from it8c import data
 fileSeparator =";"
 fileStringSep ='"'
 #READ FILE
-def readFile(name):
+def crf185224(name):
 	file = name
 	file = open(file, "r")
 	fileContent = file.read().splitlines()
 	file.close()
 	return fileContent
 #WRITE FILE
-def writeFile(array, ifilename, separator, strsep):
+def cwf235212(array, ifilename, separator, strsep):
 	if separator == "":
 		separator = fileSeparator
-	arrayMaxWidth =0
 	arrayHeight = len(array)
 	arrayLine =""
 	fileName = ifilename
@@ -29,7 +28,7 @@ def writeFile(array, ifilename, separator, strsep):
 		arrayWidth = len(array[yp])
 		for xp in range(0, arrayWidth):
 			point = str(array[yp][xp])
-			pointTypeCheck = data.checkIfItIsNumber(point)
+			pointTypeCheck = data.cfc318398(point)
 			if pointTypeCheck == 0:
 				if strsep == 1:
 					point = fileStringSep + point + fileStringSep
@@ -45,7 +44,7 @@ def writeFile(array, ifilename, separator, strsep):
 		arrayLine =""
 	f.close()
 #ARRAY WIDTH (CSV STYLE)
-def getArrayWidth(array, contentFileSep):
+def cpf78373(array, contentFileSep):
 	if contentFileSep == "":
 		contentFileSep = fileSeparator
 	arrayMaxWidth =0
@@ -73,19 +72,19 @@ def getArrayWidth(array, contentFileSep):
 			arrayMaxWidth = pointWidth
 	return arrayMaxWidth
 #ARRAY SIZE
-def getArrayHeightWidth(array):
+def cpf78481(array):
 	arrayHeight = len(array)
 	arrayWidth = len(array[0])
 	arraySize = str(arrayHeight) +"x"+ str(arrayWidth)
 	return arraySize
 #MAKE ARRAY
-def makeContentArray(contentFileName, contentFileSep):
-	contentFile = readFile(contentFileName)
+def crf1325420(contentFileName, contentFileSep):
+	contentFile = crf185224(contentFileName)
 	contentHeight = len(contentFile)
 	if contentFileSep == "":
 		contentFileSep = fileSeparator
 	arrayHeight = len(contentFile)
-	arrayWidth = getArrayWidth(contentFile, contentFileSep)
+	arrayWidth = cpf78373(contentFile, contentFileSep)
 	arrayContent = [["" for xp in range(arrayWidth)] for yp in range(arrayHeight)]
 	arrayYP =0
 	for yp in range(0, contentHeight):
@@ -125,22 +124,3 @@ def makeContentArray(contentFileName, contentFileSep):
 					wcl = wcl + pointCheck
 			mathRe1Content[ypa][xpa] = wcl
 	return mathRe1Content
-#PRINT ARRAY
-def printContentArraySimple(array):
-	arrayMaxWidth =0
-	arrayHeight = len(array)
-	arrayPrintMap =""
-	arraySeparatorV ="\n"
-	arraySeparatorH = " "
-	for yp in range(0, arrayHeight):
-		arrayWidth = len(array[yp])
-		for xp in range(0, arrayWidth):
-			point = str(array[yp][xp])
-			if point !="":
-				if xp == 0:
-					arrayPrintMap = arrayPrintMap + point
-				else:
-					arrayPrintMap = arrayPrintMap + arraySeparatorH + point
-		if yp < arrayHeight -1:
-			arrayPrintMap = arrayPrintMap + arraySeparatorV
-	return arrayPrintMap

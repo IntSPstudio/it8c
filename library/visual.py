@@ -5,10 +5,10 @@
 #|==============================================================|#
 
 #TERMINAL IT8C LOGO
-def comTerminalLogo(stpoint):
+def cfc315323(stpoint):
 	stmark =""
 	if stpoint > 0:
-		for i in range(stpoint):
+		for _ in range(stpoint):
 			stmark = stmark +" "
 	a = stmark +"#############################"
 	b = stmark +"##################    ##"
@@ -20,10 +20,10 @@ def comTerminalLogo(stpoint):
 	h = stmark +"##      ##      #############"
 	return "\n"+ a +"\n"+ b +"\n"+ c +"\n"+ d +"\n"+ e +"\n"+ f +"\n"+ g +"\n"+ h +"\n"
 #WHAT
-def comTerminalDunno(stpoint):
+def cfc315313(stpoint):
 	stmark =""
 	if stpoint > 0:
-		for i in range(stpoint):
+		for _ in range(stpoint):
 			stmark = stmark +" "
 	a = stmark +"######            "
 	b = stmark +"#    #            "
@@ -33,10 +33,10 @@ def comTerminalDunno(stpoint):
 	f = stmark +"######  ##  ######"
 	return "\n"+ a +"\n"+ b +"\n"+ c +"\n"+ d +"\n"+ e +"\n"+ f +"\n" 
 #TERMINAL LINE
-def comTerminalBackgroundLine(width,mark):
+def cfc35650(width,mark):
 	if width > 0:
 		line =""
-		for i in range(width):
+		for _ in range(width):
 			line = line + mark
 	else:
 		line = "----------------------------------------------------------------"
