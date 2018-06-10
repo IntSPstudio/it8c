@@ -5,12 +5,11 @@
 #|==============================================================|#
 
 #IMPORT
-from it8c import csv
 from it8c import data
 from it8c import file
 #READ FILE
 def crf185319(fileName,separator):
-	array1Content = csv.crf1325420(fileName,separator)
+	array1Content = file.crf1325420(fileName,separator)
 	array1Height = len(array1Content)
 	checka =0
 	for zp in range(0,2):

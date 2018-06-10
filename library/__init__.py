@@ -2,27 +2,19 @@
 # Made by IntSPstudio
 # Data handling library
 # Thank you for using this library!
-# Version: 0.3.22.20180401
+# Version: 0.3.23.20180610
 # ID: 980001001
 #|==============================================================|#
-#HELP AND INFORMATION
 from it8c import help
-#VISUAL
 from it8c import visual
-#FILE HANDLING
 from it8c import file
-#DATA HANDLING
 from it8c import data
-#COPA
 from it8c import copa
-#CSV
-from it8c import csv
-#ENCRYPTION
 from it8c import encryption
 #|COM|==========================================================|#
 #HAI VERSION
 def version():
-	return "0.3.22.20180401"
+	return "0.3.23.20180610"
 #HAI FEATURES
 def haiFeatures():
 	help.ctb619230()
@@ -46,17 +38,24 @@ def fileReadText(filename):
 def fileRead1LText(filename):
 	return file.crf135433(filename)
 #WRITE LIST TEXT FILE
-def fileWriteTextList(filelist,filename):
-	return file.cwf135577(filelist,filename)
+def fileWriteTextList(filecontent,filename):
+	return file.cwf135577(filecontent,filename)
 #WRITE 1L TEXT FILE
-def fileWrite1LText(fileline,filename):
-	return file.cwf135518(fileline,filename)
+def fileWrite1LText(filecontent,filename):
+	return file.cwf135518(filecontent,filename)
 #FILE EXIST
 def fileTextExists(filename):
 	return file.cfc1319459(filename)
 #PRINT TEXT FILE
 def filePrintText(filename):
 	return file.cfc135410(filename)
+#|CSV|==========================================================|#
+#CSV READ FILE
+def csvReadFile(filename,fileseparator):
+	return file.crf1325420(filename,fileseparator)
+#CSV WRITE FILE
+def csvWriteFile(filearray,filename,fileseparator,strseparator):
+	file.cwf235212(filearray,filename,fileseparator,strseparator)
 #|DATA COM|=====================================================|#
 #LETTERS AND DIGITS
 def lettersdigits(input,alt):
@@ -91,8 +90,8 @@ def dataFlipListObjects(filearray):
 	return data.cad619467(filearray)
 #|DATA 2D|======================================================|#
 #CREATE ARRAY
-def dataCreateArray(filearrayheight,filearraywidth,filecontent):
-	return data.cbd325306(filearrayheight,filearraywidth,filecontent)
+def dataCreateArray(arrayheight,arraywidth,filecontent):
+	return data.cbd325306(arrayheight,arraywidth,filecontent)
 #PRINT ARRAY
 def dataPrintArray(filearray,contentseparator):
 	return data.cbd1620473(filearray,contentseparator)
@@ -142,23 +141,13 @@ def copaWrite(filename,filearray,fileseparator):
 #MODIFY FILE
 def copaMod(filename,filekey,filevalue,filemode,fileseparator):
 	copa.cpf135315(filename,filekey,filevalue,filemode,fileseparator)
-#|CSV|==========================================================|#
-#CSV READ FILE
-def csvReadFile(filename,fileseparator):
-	return csv.crf1325420(filename,fileseparator)
-#CSV WRITE FILE
-def csvWriteFile(filearray,filename,fileseparator,strseparator):
-	csv.cwf235212(filearray,filename,fileseparator,strseparator)
-#CSV ARRAY SIZE
-def csvArraySize(filearray):
-	return csv.cpf78481(filearray)
 #|ENCRYPTION|===================================================|#
 #SHA1
-def encryptSha1(filestring):
-	return encryption.cpd51249(filestring)
+def encryptSha1(input):
+	return encryption.cpd51249(input)
 #SHA256
-def encryptSha256(filestring):
-	return encryption.cpd56292(filestring)
+def encryptSha256(input):
+	return encryption.cpd56292(input)
 #MD5
-def encryptMd5(filestring):
-	return encryption.cpd55232(filestring)
+def encryptMd5(input):
+	return encryption.cpd55232(input)
