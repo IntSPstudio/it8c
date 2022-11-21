@@ -1,6 +1,6 @@
 # IT8c Data Handling Library
 
-<img src="https://i.imgur.com/Pm1DFdE.png" width="25%" height="25%" />
+<img src="https://i.imgur.com/Pm1DFdE.png" width="45%" height="45%" />
 
 I wanted certain common features for my python softwares and there is no need to write the same lines for each different software. Check out the wiki to learn more.
 
