@@ -17,282 +17,282 @@ def cfc318398(input):
         return 0
 #|1D ARRAY|=====================================================|#
 #MAKE 1D ARRAY
-def cad325305(arraySize,arrayContent):
-	return [arrayContent for xp in range(arraySize)]
+def cad325305(array_size,array_content):
+	return [array_content for xp in range(array_size)]
 #MAKE 1D ARRAY TO 2D ARRAY
-def cad1325478(array1Content,array2DefContent,array2Width):
-	array1Width =  len(array1Content)
-	array2Height =0
+def cad1325478(array1_content,array2_def_content,array2_width):
+	array1_width =  len(array1_content)
+	array2_height =0
 	xp =0
-	for i in range(0, array1Width):
+	for i in range(0, array1_width):
 		xp +=1
-		if xp >= array2Width:
-			array2Height +=1
+		if xp >= array2_width:
+			array2_height +=1
 			xp =0
-	array2Content = cbd325306(array2Height,array2Width,array2DefContent)
+	array2_content = cbd325306(array2_height,array2_width,array2_def_content)
 	xp =0
 	yp =0
-	for i in range(0, array1Width):
-		if xp == array2Width:
+	for i in range(0, array1_width):
+		if xp == array2_width:
 			xp =0
 			yp +=1
-		array2Content[yp][xp] = array1Content[i]
+		array2_content[yp][xp] = array1_content[i]
 		xp +=1
-	return array2Content
+	return array2_content
 #PRINT 1D ARRAY 
-def cad1620472(arrayContent,separator):
-	arrayWidth = len(arrayContent)
-	arrayOutput =""
-	for i in range(0, arrayWidth):
-		point = str(arrayContent[i])
-		if arrayOutput !="":
-			arrayOutput = arrayOutput + separator + point
+def cad1620472(array_content,separator):
+	array_width = len(array_content)
+	array_output =""
+	for i in range(0, array_width):
+		point = str(array_content[i])
+		if array_output !="":
+			array_output = array_output + separator + point
 		else:
-			arrayOutput = point
-	return arrayOutput
+			array_output = point
+	return array_output
 #CALCULATE AVARAGE VALUE
-def cad320542(arrayContent):
-	arrayWidth = len(arrayContent)
-	arrayOutput =0
-	arrayCounter =0
-	for i in range(0, arrayWidth):
-		point = arrayContent[i]
+def cad320542(array_content):
+	array_width = len(array_content)
+	array_output =0
+	array_counter =0
+	for i in range(0, array_width):
+		point = array_content[i]
 		check = cfc318398(point)
 		if check == 1:
-			arrayCounter = arrayCounter +1
-			arrayOutput = arrayOutput + int(point)
-	if arrayCounter > 0:
-		return arrayOutput / arrayCounter
+			array_counter = array_counter +1
+			array_output = array_output + int(point)
+	if array_counter > 0:
+		return array_output / array_counter
 	else:
 		return 0
 #CALCULATE SUM VALUE
-def cad320479(arrayContent):
-	arrayWidth = len(arrayContent)
-	arrayOutput =0
-	for i in range(0, arrayWidth):
-		point = arrayContent[i]
+def cad320479(array_content):
+	array_width = len(array_content)
+	array_output =0
+	for i in range(0, array_width):
+		point = array_content[i]
 		check = cfc318398(point)
 		if check == 1:
-			arrayOutput = arrayOutput + int(point)
-	return arrayOutput
+			array_output = array_output + int(point)
+	return array_output
 #CHECK MAX VALUE
-def cad320776(arrayContent):
-	arrayWidth = len(arrayContent)
-	arrayOutput =0
-	for i in range(0, arrayWidth):
-		point = arrayContent[i]
+def cad320776(array_content):
+	array_width = len(array_content)
+	array_output =0
+	for i in range(0, array_width):
+		point = array_content[i]
 		check = cfc318398(point)
 		if check == 1:
 			point = int(point)
-			if point > arrayOutput:
-				arrayOutput = point
-	return arrayOutput
+			if point > array_output:
+				array_output = point
+	return array_output
 #CHECK 1D ARRAY OBJECTS
-def cad319492(array1Content):
-	array1Content = sorted(array1Content)
-	array1Width = len(array1Content)
-	pointa =""
+def cad319492(array1_content):
+	array1_content = sorted(array1_content)
+	array1_width = len(array1_content)
+	point1 =""
 	for i in range(0,2):
 		if i == 1:
-			checkHeight = ypb
-			checkWidth =3
-			checkContent = cbd325306(checkHeight,checkWidth,"")
+			check_height = ypb
+			check_width =3
+			check_content = cbd325306(check_height,check_width,"")
 		ypb =0
-		for ypa in range(0, array1Width):
-			pointb = str(array1Content[ypa])
-			if pointb !="":
-				if pointb != pointa:
+		for ypa in range(0, array1_width):
+			point2 = str(array1_content[ypa])
+			if point2 !="":
+				if point2 != point1:
 					if i == 1:
-						checkContent[ypb][0] = str(ypb +1)
-						checkContent[ypb][2] = pointb
+						check_content[ypb][0] = str(ypb +1)
+						check_content[ypb][2] = point2
 					ypb +=1
-				pointa = pointb
-	for ypa in range(0,checkHeight):
-		checka =0
-		pointa = str(checkContent[ypa][2])
-		for ypb in range(0,array1Width):
-			pointb = str(array1Content[ypb])
-			if pointa == pointb:
-				checka +=1
-		checkContent[ypa][1] = str(checka)
-	return checkContent
+				point1 = point2
+	for ypa in range(0,check_height):
+		check1 =0
+		point1 = str(check_content[ypa][2])
+		for ypb in range(0,array1_width):
+			point2 = str(array1_content[ypb])
+			if point1 == point2:
+				check1 +=1
+		check_content[ypa][1] = str(check1)
+	return check_content
 #CONTENT FORMAT
-def cad320737(arrayContent,arrayMode):
-	arrayWidth = len(arrayContent)
-	for yp in range(0, arrayWidth):
-		pointa = str(arrayContent[yp])
-		if arrayMode == 1:
-			pointb = str.lower(pointa)
-		elif arrayMode == 2:
-			pointb = str.upper(pointa)
-		elif arrayMode == 3:
-			pointb = cfc1219294(pointa,"") 
-		elif arrayMode == 4:
-			check = cfc318398(pointa)
+def cad320737(array_content,array_mode):
+	array_width = len(array_content)
+	for yp in range(0, array_width):
+		point1 = str(array_content[yp])
+		if array_mode == 1:
+			point2 = str.lower(point1)
+		elif array_mode == 2:
+			point2 = str.upper(point1)
+		elif array_mode == 3:
+			point2 = cfc1219294(point1,"") 
+		elif array_mode == 4:
+			check = cfc318398(point1)
 			if check == 1:
-				pointb = int(pointa)
+				point2 = int(point1)
 			else:
-				pointb =0
-		arrayContent[yp] = pointb
-	return arrayContent
+				point2 =0
+		array_content[yp] = point2
+	return array_content
 #FLIP OBJECTS
-def cad619467(array1Content):
-	array1Length = len(array1Content)
-	array2Content = cad325305(array1Length,"")
-	for ypa in range(0,array1Length):
-		ypb = array1Length -ypa -1
-		array2Content[ypa] = array1Content[ypb]
-	return array2Content
+def cad619467(array1_content):
+	array1_length = len(array1_content)
+	array2_content = cad325305(array1_length,"")
+	for ypa in range(0,array1_length):
+		ypb = array1_length -ypa -1
+		array2_content[ypa] = array1_content[ypb]
+	return array2_content
 #|2D ARRAY|=====================================================|#
 #MAKE 2D ARRAY
-def cbd325306(arrayHeight,arrayWidth,arrayContent):
-	return [[arrayContent for xp in range(arrayWidth)] for yp in range(arrayHeight)]
+def cbd325306(array_height,array_width,array_content):
+	return [[array_content for xp in range(array_width)] for yp in range(array_height)]
 #MAKE 2D ARRAY TO 1D ARRAY
-def cbd1325477(array1Content):
-	array1Height = len(array1Content)
-	array1Width =  len(array1Content[0])
-	array1Counter =0
-	array2Width = array1Height * array1Width
-	array2Content = cad325305(array2Width,"")
-	for yp in range(0, array1Height):
-		for xp in range(0, array1Width):
-			array2Content[array1Counter] = array1Content[yp][xp]
-			array1Counter +=1
-	return array2Content
+def cbd1325477(array1_content):
+	array1_height = len(array1_content)
+	array1_width =  len(array1_content[0])
+	array1_counter =0
+	array2_width = array1_height * array1_width
+	array2_content = cad325305(array2_width,"")
+	for yp in range(0, array1_height):
+		for xp in range(0, array1_width):
+			array2_content[array1_counter] = array1_content[yp][xp]
+			array1_counter +=1
+	return array2_content
 #PRINT 2D ARRAY
-def cbd1620473(arrayContent,separator):
-	arrayHeight = len(arrayContent)
-	arrayWidth = len(arrayContent[0])
-	arrayPrintMap =""
-	arraySeparatorV ="\n"
-	for yp in range(0, arrayHeight):
-		for xp in range(0, arrayWidth):
-			point = str(arrayContent[yp][xp])
+def cbd1620473(array_content,separator):
+	array_height = len(array_content)
+	array_width = len(array_content[0])
+	array_content =""
+	array_separatorv ="\n"
+	for yp in range(0, array_height):
+		for xp in range(0, array_width):
+			point = str(array_content[yp][xp])
 			if point !="":
 				if xp == 0:
-					arrayPrintMap = arrayPrintMap + point
+					array_content = array_content + point
 				else:
-					arrayPrintMap = arrayPrintMap + separator + point
-		if yp < arrayHeight -1:
-			arrayPrintMap = arrayPrintMap + arraySeparatorV
-	return arrayPrintMap
+					array_content = array_content + separator + point
+		if yp < array_height -1:
+			array_content = array_content + array_separatorv
+	return array_content
 #SMART PRINT 2D ARRAY
-def cbd1920575(array1Content,separator,fill,contentMode):
-	array1Height = len(array1Content)
-	array1Width = len(array1Content[0])
-	arrayRowSpWidth = cad325305(array1Width,"")
-	array2Height = array1Height
-	array2Width = array1Width
-	array2Content = cbd325306(array2Height,array2Width,"")
-	for xp in range(0,array1Width):
-		contenta = cbd514472(array1Content,xp)
-		contentaLength = len(contenta)
-		checka =0
-		for yp in range(0,contentaLength):
-			checkb = len(str(contenta[yp]))
-			if checkb > checka:
-				checka = checkb
-		arrayRowSpWidth[xp] = checka
-	for yp in range(0,array1Height):
-		for xp in range(0,array1Width):
-			pointa = str(array1Content[yp][xp])
-			checka = len(pointa)
-			checkb = arrayRowSpWidth[xp] - checka
-			checkc = cfc318398(pointa)
-			if checkb > 0:
-				pointb =""
-				for _ in range(0, checkb):
-					if contentMode == 1:
-						pointb = pointb + fill
+def cbd1920575(array1_content,separator,fill,content_mode):
+	array1_height = len(array1_content)
+	array1_width = len(array1_content[0])
+	array_rowsp_width = cad325305(array1_width,"")
+	array2_height = array1_height
+	array2_width = array1_width
+	array2_content = cbd325306(array2_height,array2_width,"")
+	for xp in range(0,array1_width):
+		content1 = cbd514472(array1_content,xp)
+		content1_length = len(content1)
+		check1 =0
+		for yp in range(0,content1_length):
+			check2 = len(str(content1[yp]))
+			if check2 > check1:
+				check1 = check2
+		array_rowsp_width[xp] = check1
+	for yp in range(0,array1_height):
+		for xp in range(0,array1_width):
+			point1 = str(array1_content[yp][xp])
+			check1 = len(point1)
+			check2 = array_rowsp_width[xp] - check1
+			check3 = cfc318398(point1)
+			if check2 > 0:
+				point2 =""
+				for _ in range(0, check2):
+					if content_mode == 1:
+						point2 = point2 + fill
 					else:
-						pointb = pointb + " "
-				if checkc == 0:
-					pointc = pointa + pointb
+						point2 = point2 + " "
+				if check3 == 0:
+					point3 = point1 + point2
 				else:
-					pointc = pointb + pointa
+					point3 = point2 + point1
 			else:
-				pointc = pointa
-			array2Content[yp][xp] = pointc
-	return cbd1620473(array2Content,separator)
+				point3 = point1
+			array2_content[yp][xp] = point3
+	return cbd1620473(array2_content,separator)
 #CALCULATE AVARAGE VALUE
-def cbd320543(arrayContent):
-	return cad320542(cbd1325477(arrayContent))
+def cbd320543(array_content):
+	return cad320542(cbd1325477(array_content))
 #CALCULATE SUM VALUE
-def cbd320480(arrayContent):
-	return cad320479(cbd1325477(arrayContent))
+def cbd320480(array_content):
+	return cad320479(cbd1325477(array_content))
 #CHECK MAX VALUE
-def cbd320777(arrayContent):
-	return cad320776(cbd1325477(arrayContent))
+def cbd320777(array_content):
+	return cad320776(cbd1325477(array_content))
 #CHECK 2D ARRAY OBJECTS
-def cbd319493(arrayContent):
-	return cad319492(cbd1325477(arrayContent))
+def cbd319493(array_content):
+	return cad319492(cbd1325477(array_content))
 #CONTENT FORMAT
-def cbd320738(array1Content,arrayMode):
-	return cad1325478(cad320737(cbd1325477(array1Content),arrayMode),"",len(array1Content[0]))
+def cbd320738(array1_content,array_mode):
+	return cad1325478(cad320737(cbd1325477(array1_content),array_mode),"",len(array1_content[0]))
 #EXTRACT ARRAY COLUMN
-def cbd514472(array1Content,pos):
-	array1Height = len(array1Content)
-	array1Width = len(array1Content[0])
-	array2Content = cad325305(array1Height,"")
-	if pos < array1Width:
-		for yp in range(0, array1Height):
-			array2Content[yp] = array1Content[yp][pos]
-	return array2Content
+def cbd514472(array1_content,pos):
+	array1_height = len(array1_content)
+	array1_width = len(array1_content[0])
+	array2_content = cad325305(array1_height,"")
+	if pos < array1_width:
+		for yp in range(0, array1_height):
+			array2_content[yp] = array1_content[yp][pos]
+	return array2_content
 #ADD COLUMN TO ARRAY
-def cdb114391(array1Content, array2Content):
-	array1Height = len(array1Content)
-	array1Width = len(array1Content[0])
-	array2Length = len(array2Content)
-	array3Height = array1Height
-	array3Width = array1Width +1
-	if array2Length > array1Height:
-		array3Height = array2Length
-	array3Content = cbd325306(array3Height, array3Width, "")
-	for y in range(0, array1Height):
-		for x in range(0, array1Width):
-			array3Content[y][x] = array1Content[y][x]
+def cdb114391(array1_content, array2_content):
+	array1_height = len(array1_content)
+	array1_width = len(array1_content[0])
+	array2Length = len(array2_content)
+	array3_height = array1_height
+	array3_width = array1_width +1
+	if array2Length > array1_height:
+		array3_height = array2Length
+	array3_content = cbd325306(array3_height, array3_width, "")
+	for y in range(0, array1_height):
+		for x in range(0, array1_width):
+			array3_content[y][x] = array1_content[y][x]
 	for i in range(0, array2Length):
-		array3Content[i][array3Width -1] = array2Content[i]
-	return array3Content
+		array3_content[i][array3_width -1] = array2_content[i]
+	return array3_content
 #ADD NEW ROW
-def cbd125319(array1Content,array3Content):
-	array1Height = len(array1Content)
-	array1Width = len(array1Content[0])
-	array2Height = array1Height +1
-	array2Width = array1Width
-	array3Width = len(array3Content)
-	if array3Width > array2Width:
-		checka = array3Width
+def cbd125319(array1_content,array3_content):
+	array1_height = len(array1_content)
+	array1_width = len(array1_content[0])
+	array2_height = array1_height +1
+	array2_width = array1_width
+	array3_width = len(array3_content)
+	if array3_width > array2_width:
+		check1 = array3_width
 	else:
-		checka = array2Width
-	array2Content = cbd325306(array2Height,checka,"")
-	for yp in range(0,array1Height):
-		for xp in range(0,array1Width):
-			pointa = str(array1Content[yp][xp])
-			array2Content[yp][xp] = pointa
-	yp = array1Height
-	for xp in range(0,array3Width):
-		array2Content[yp][xp] = str(array3Content[xp])
-	return array2Content
+		check1 = array2_width
+	array2_content = cbd325306(array2_height,check1,"")
+	for yp in range(0,array1_height):
+		for xp in range(0,array1_width):
+			point1 = str(array1_content[yp][xp])
+			array2_content[yp][xp] = point1
+	yp = array1_height
+	for xp in range(0,array3_width):
+		array2_content[yp][xp] = str(array3_content[xp])
+	return array2_content
 #FLIP OBJECTS
-def cbd619468(array1Content):
-	array1Height = len(array1Content)
-	array1Width = len(array1Content[0])
-	array2Height = array1Height
-	array2Width = array1Width
-	array2Content = cbd325306(array2Height,array2Width,"")
-	ypb = array2Height
-	for ypa in range(0,array1Height):
+def cbd619468(array1_content):
+	array1_height = len(array1_content)
+	array1_width = len(array1_content[0])
+	array2_height = array1_height
+	array2_width = array1_width
+	array2_content = cbd325306(array2_height,array2_width,"")
+	ypb = array2_height
+	for ypa in range(0,array1_height):
 		ypb -=1
-		for xp in range(0,array1Width):
-			pointa = str(array1Content[ypa][xp])
-			array2Content[ypb][xp] = pointa
-	return array2Content
+		for xp in range(0,array1_width):
+			point1 = str(array1_content[ypa][xp])
+			array2_content[ypb][xp] = point1
+	return array2_content
 #REMOVE TITLE
-def cbd75347(array1Content):
-	array1Height = len(array1Content)
-	array1Width = len(array1Content[0])
-	array2Content = cbd325306(array1Height -1,array1Width,"")
-	for y in range(1, array1Height):
-		array2Content[y-1] = array1Content[y]
-	return array2Content
+def cbd75347(array1_content):
+	array1_height = len(array1_content)
+	array1_width = len(array1_content[0])
+	array2_content = cbd325306(array1_height -1,array1_width,"")
+	for y in range(1, array1_height):
+		array2_content[y-1] = array1_content[y]
+	return array2_content
